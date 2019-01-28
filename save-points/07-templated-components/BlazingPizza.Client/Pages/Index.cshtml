@@ -48,10 +48,10 @@
     </div>
 </div>
 
-@if (OrderState.ShowingConfigureDialog)
-{
+<TemplatedDialog Show="OrderState.ShowingConfigureDialog">
+    @{ Console.WriteLine("Inside ChildContent"); }
     <ConfigurePizzaDialog />
-}
+</TemplatedDialog>
 
 @functions {
     [CascadingParameter] UserStateProvider UserState { get; set; }
